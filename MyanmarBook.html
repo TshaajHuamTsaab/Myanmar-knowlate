@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ဘဝအတွက် အရေးကြီးသော သင်ခန်းစာ (၁၀) ခု</title>
+  <style>
+    body {
+      font-family: "Noto Sans Myanmar", sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    /* Book cover */
+    .book {
+      width: 220px;
+      height: 240px;
+      background: linear-gradient(145deg,#8b5e3c,#4c1d95);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.4;
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 10px;
+    }
+    .book:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    }
+
+    /* Reader container */
+    .reader {
+      margin-top: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 650px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none;
+      animation: fadeIn 0.5s ease;
+      text-align: center;
+    }
+
+    /* Title style with red color */
+    .page-title {
+      color: red;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: colorShift 4s infinite alternate;
+    }
+
+    /* Body animation color */
+    .page-body {
+      font-size: 20px;
+      line-height: 1.6;
+      white-space: pre-line;
+      animation: colorShift 6s infinite alternate;
+    }
+
+    @keyframes colorShift {
+      0% { color: #333; }
+      50% { color: #a83232; }
+      100% { color: #e63946; }
+    }
+
+    .page {
+      display: none;
+      padding: 10px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      background: #8b5e3c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #6d452e;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @media (max-width:480px){
+      .book{width:180px;height:200px;font-size:16px}
+      .page-body{font-size:18px}
+      .page-title{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Book cover with full title -->
+  <div class="book" id="book">
+    ဘဝအတွက် အရေးကြီးသော<br>သင်ခန်းစာ (၁၀) ခု
+  </div>
+
+  <!-- Reader pages -->
+  <div class="reader" id="reader">
+    <div class="page active">
+      <div class="page-title">ဘဝအတွက် အရေးကြီးသော သင်ခန်းစာ (၁၀) ခု</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁. ကိုယ့်ကိုယ်ကိုယ် ချစ်ပါ၊ ယုံကြည်ပါ။
+သင့်တန်ဖိုးကို အခြားသူတွေရဲ့ 
+ထင်မြင်ချက်တွေနဲ့ မတိုင်းတာပါနဲ့။
+ကိုယ်ချစ်မှ သူများကိုလည်း 
+အမှန်တကယ် ချစ်တတ်မယ်။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၂. ကျေးဇူးတင်တတ်တဲ့ စိတ်ထားကို မွေးမြူပါ။
+ဘဝမှာရှိတဲ့ သေးမွှားတဲ့ အရာလေးတွေကိုပါ 
+ကျေးဇူးတင်တတ်တဲ့သူဟာ 
+ပျော်ရွှင်မှုကို အမြဲတမ်းရှာတွေ့နေမယ်။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၃. ပျော်ရွှင်မှုဟာ ရွေးချယ်မှုတစ်ခုပါ။
+အခြေအနေတွေကို မထိန်းချုပ်နိုင်ပေမယ့်၊
+သူတို့ကို တုံ့ပြန်ပုံကတော့ သင့်ရွေးချယ်မှုပါ။
+ပျော်ရွှင်ဖို့ ရွေးချယ်ပါ။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၄. အတိတ်ကို စွန့်လွှတ်ပြီး ပစ္စုပ္ပန်ကို ရှင်သန်ပါ။
+အတိတ်ဆိုတာ သင်ခန်းစာယူဖို့၊ 
+ပစ္စုပ္ပန်ဆိုတာ ရှင်သန်ဖို့၊ 
+အနာဂတ်ဆိုတာ မျှော်လင့်ဖို့ပါ။
+တစ်ခုနဲ့တစ်ခု ရောထွေးမနေပါနဲ့။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၅. ဆုံးရှုံးမှုနဲ့ နာကျင်မှုတွေဟာ သင့်ကို ပိုခိုင်မာစေတယ်။
+ဘဝမှာ ကြုံတွေ့ရမယ့် 
+ဒဏ်ရာတိုင်းဟာ သင့်ကို သင်ယူမှုပေးပြီး
+နောက်ဆုံးမှာ ပိုအားကောင်းလာစေမယ်။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၆. အရေးကြီးဆုံးက ဘဝရဲ့ ခရီးလမ်းကို ခံစားပါ။
+ရလဒ်တွေချည်း အာရုံမစိုက်ပါနဲ့။ 
+လမ်းကြောင်းတစ်လျှောက်က 
+အတွေ့အကြုံတိုင်းကို တန်ဖိုးထားပါ။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၇. ကိုယ့်အတွက် မှန်ကန်တဲ့လမ်းကို လျှောက်ပါ။
+လူတွေဘာပြောပြော၊ သင့်နှလုံးသားရဲ့ 
+အသံကို နားထောင်ပါ။
+သင့်ကို စိတ်ချမ်းသာစေမယ့်
+လမ်းကိုသာ ရွေးချယ်ပါ။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၈. မိသားစုနဲ့ ဆက်ဆံရေးကို ဦးစားပေးပါ။
+ဘယ်လောက်ပဲ လူမှုရေးနဲ့ အလုပ်များများ၊
+မိသားစုနဲ့ အချိန်ကောင်းကောင်းကုန်ဆုံးဖို့ မမေ့ပါနဲ့။ 
+ဒါတွေဟာ သင့်ဘဝရဲ့ အားကိုးရာပါ။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၉. စိတ်ရှည်ပါ၊ ဘဝကြီးဟာ မာရသွန်ပြေးပွဲပါ။
+တစ်နေ့တည်းနဲ့ အောင်မြင်မှုရဖို့ 
+ဖိအားမပေးပါနဲ့။ 
+နေ့စဉ်ကြိုးစားမှုအနည်းငယ်စီဟာ 
+နှစ်ပေါင်းများစွာကြာတဲ့အခါ
+ အံ့ဩစရာအကျိုးတွေကို 
+ဖန်တီးပေးပါလိမ့်မယ်။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၀. ပေးကမ်းဝေငှပါ၊ ကူညီပါ။
+တစ်ခါတလေ 
+ကိုယ်အခက်အခဲရှိရင်တောင် 
+သူများကို ကူညီပေးတတ်တဲ့စိတ်ဟာ 
+ကိုယ့်ကိုယ်ကိုယ် ပြန်ပြီး အားတက်စေပါတယ်။</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="prev">⟵ Previous</button>
+      <button id="next">Next ⟶</button>
+    </div>
+  </div>
+
+  <script>
+    const book = document.getElementById("book");
+    const reader = document.getElementById("reader");
+    const pages = document.querySelectorAll(".page");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+
+    let currentPage = 0;
+
+    book.addEventListener("click", () => {
+      book.style.display = "none";
+      reader.style.display = "block";
+    });
+
+    function showPage(index) {
+      pages.forEach((p, i) => {
+        p.classList.toggle("active", i === index);
+      });
+    }
+
+    prev.addEventListener("click", () => {
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    });
+
+    next.addEventListener("click", () => {
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (reader.style.display === "block") {
+        if (e.key === "ArrowLeft") prev.click();
+        if (e.key === "ArrowRight") next.click();
+      }
+    });
+  </script>
+
+</body>
+</html>
