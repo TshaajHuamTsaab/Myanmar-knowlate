@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ဘဝအတွက် အရေးကြီးသော သင်ခန်းစာ (၁၀) ခု</title>
+  <title>လူမှုဘဝအတွက် သိထားသင့်သော အခြေခံအချက်များ</title>
   <style>
     body {
       font-family: "Noto Sans Myanmar", sans-serif;
-      background: #f4f4f9;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 30px;
+      min-height: 100vh;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23d6e0f0' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23a4b8db'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
     }
 
     /* Book cover */
     .book {
       width: 220px;
       height: 240px;
-      background: linear-gradient(145deg,#8b5e3c,#4c1d95);
+      background: linear-gradient(145deg, #8b5e3c, #4c1d95);
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       cursor: pointer;
@@ -32,6 +34,7 @@
       line-height: 1.4;
       transition: transform 0.3s, box-shadow 0.3s;
       padding: 10px;
+      margin-bottom: 20px;
     }
     .book:hover {
       transform: scale(1.05);
@@ -44,21 +47,23 @@
       padding: 20px;
       width: 90%;
       max-width: 650px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       display: none;
       animation: fadeIn 0.5s ease;
       text-align: center;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     /* Title style with red color */
     .page-title {
-      color: red;
+      color: #d35400;
       font-size: 26px;
       font-weight: bold;
       margin-bottom: 20px;
-      animation: colorShift 4s infinite alternate;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
     /* Body animation color */
@@ -66,13 +71,11 @@
       font-size: 20px;
       line-height: 1.6;
       white-space: pre-line;
-      animation: colorShift 6s infinite alternate;
-    }
-
-    @keyframes colorShift {
-      0% { color: #333; }
-      50% { color: #a83232; }
-      100% { color: #e63946; }
+      color: #2c3e50;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(236, 240, 241, 0.5);
+      margin-bottom: 15px;
     }
 
     .page {
@@ -88,6 +91,8 @@
       margin-top: 15px;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     button {
@@ -97,12 +102,39 @@
       padding: 10px 20px;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
       font-weight: bold;
+      flex: 1;
+      min-width: 120px;
     }
 
     button:hover {
       background: #6d452e;
+      transform: translateY(-2px);
+    }
+
+    #playBtn {
+      background: #27ae60;
+    }
+    
+    #playBtn:hover {
+      background: #219653;
+    }
+    
+    #stopBtn {
+      background: #e74c3c;
+    }
+    
+    #stopBtn:hover {
+      background: #c0392b;
+    }
+
+    .audio-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      width: 100%;
     }
 
     @keyframes fadeIn {
@@ -114,6 +146,12 @@
       .book{width:180px;height:200px;font-size:16px}
       .page-body{font-size:18px}
       .page-title{font-size:22px}
+      .controls {
+        flex-direction: column;
+      }
+      button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -121,7 +159,7 @@
 
   <!-- Book cover with full title -->
   <div class="book" id="book">
-    ဘဝအတွက် အရေးကြီးသော<br>သင်ခန်းစာ (၁၀) ခု
+    လူမှုဘဝအတွက်<br>သိထားသင့်သော<br>အခြေခံအချက်များ
   </div>
 
   <!-- Reader pages -->
@@ -196,11 +234,115 @@
 သူများကို ကူညီပေးတတ်တဲ့စိတ်ဟာ 
 ကိုယ့်ကိုယ်ကိုယ် ပြန်ပြီး အားတက်စေပါတယ်။</div>
     </div>
-
+     <div class="page active">
+      <div class="page-title">လူမှုဘဝအတွက် သိထားသင့်သော အခြေခံအချက်များ</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁။ စာချုပ်ရှိမှ အလုပ်ဖြစ်မယ်
+ပါးစပ်ပြောတာနဲ့ မရဘူး
+မှတ်တမ်းတင်ထားမှ 
+ပြဿနာရှိရင် အသုံးဝင်မယ်</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၂။ ဘောင်ချာစာရွက်က သင့်ရဲ့အကောင်းဆုံးအသတ်သေမို့၊
+ငွေကြေးကိစ္စတိုင်းမှာ 
+ဘေလ်စာရွက်တောင်းပါ
+ပစ္စည်းပျက်သွားရင် 
+ပြန်အမ်းနိုင်အောင်ပြင်စဉ်သင့်သည်။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၃။ ကိုယ်ရေးကိုယ်တာအချက်အလက်တွေ ထိန်းသိမ်း၊
+အတွင်းစား၊ ဘဏ်နံပါတ်၊ အတည်ပြုကုဒ်
+မေးရင်တဲ့သူက လိမ်စားတာပါ
+အထူးသတိထားပါ။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၄။ အမြတ်အစွန်းများတယ်ဆိုပြီး လှည့်စားမှုများ။
+"အရင်းအနှီးလုံခြုံတယ်" ဆိုတာ 
+မယုံပါနဲ့
+ငွေကြေးအရင်းနှီးမြှုပ်နှံမှုမှာ 
+သတိကြီးကြီးထားပါ</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၅။ လူမှုဖူလုံရေးအာမခံချက်ကို မဖြတ်သင့်ဘူး
+ဖြတ်လိုက်ရင် အိမ်ဝယ်၊ အခြေချ
+ချေးငွေယူတာတွေမှာ အခက်တွေ့မယ်
+တတ်နိုင်သမျှ ဆက်သွားပါ။</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၆။ အချိန်ပိုလုပ်ရင် အချိန်ပိုကြေးရမယ်
+ပုံမှန် ၁.၅ ဆ၊ ပိတ်ရက်မဟုတ်သောနေ့ ၂ ဆ
+ပိတ်ရက် ၃ ဆ
+မပေးရင် တရားမဝင်ဘူး
+တိုင်ကြားလို့ရတယ်</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၇။ အိမ်ငှားမယ်ဆိုရင် ဓာတ်ပုံရိုက်ပြီး မှတ်တမ်းတင်ထားပါ။
+ပြန်စွန့်ခွာတဲ့အခါ ကော်မရှင်ခ များစွာပေးမှုကိုရှောင်နိုင်ဖို့၊
+အာမခံငွေကို သူ့သဘောနဲ့သူ ချန်ထားခဲ့မှာ စိုးရိမ်ရတယ်
+အထောက်အထားရှိမှ ကာကွယ်နိုင်မယ်</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၈။ ငွေသားအနည်းငယ် အမြဲတမ်းဆောင်ထားပါ
+အရေးပေါ်အခြေအနေတွေအတွက် 
+အဆင်သင့်ဖြစ်နေပါစေ
+ဘဏ်ကတ်တွေ အလုပ်မလုပ်တဲ့အခါ 
+ငွေသားက ကယ်တင်နိုင်တယ်</div>
+    </div>
+    <!-- 以下是新增的8页内容 -->
+    <div class="page">
+      <div class="page-body">၉။ ချေးငွေယူရင် အတိုးနှုန်းကို သေချာတွက်ကြည့်ပါ
+"အတိုးမယူဘူး" ဆိုတာ လှည့်စားမှုများသောအားဖြင့်ဖြစ်တတ်ပါတယ်
+အခြားနည်းလမ်းတွေနဲ့ ကုန်ကျစရိတ်တွေကို သိမ်းယူတတ်ပါတယ်</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၀။ အသုံးလိုက်ပစ္စည်း ဝယ်ရောင်းတဲ့အခါ စခရင်ရှော့ရိုက်ထားပါ
+စကားပြောခွက်ကို မှတ်တမ်းတင်ထားပါ
+ပြဿနာတက်ရင် သက်သေခံအဖြစ် သုံးမယ်
+မှတ်တမ်းမရှိရင် ငွေပြန်မရနိုင်ဘူး</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၁။ ကျန်းမာရေးအာမခံကအရာရာကိုမလွှဲပေးနိုင်ဘူး
+ဆေးရုံ不同，နေရာဒေသအလိုက် ပြန်လည်ထူထောင်ရေး百分比ကွာခြားတယ်
+ဆေးကုသမှုမခံယူမီ အာမခံအကျိုးခံစားခွင့်ကို သေချာစစ်ဆေးပါ</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၂။ အလုပ်ကနေအလျင်အမြန်ထွက်ဖို့ သေချာစဉ်းစားပါ
+ငွေစုငွေရင်းမလုံလောက်ရင် ဒုက္ခရောက်မယ်
+နောက်ထပ်အလုပ်ရှာမှ မရသေးရင် စိတ်ဖိစီးမှုတွေများလာမယ်</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၃။ စားပွဲထိုးမှုမှာ ကိုယ့်နေရာကိုယ်သိပါစေ
+မသောက်တတ်ရင် မသောက်တတ်ဘူးလို့ ရဲရဲကြီးပြောပါ
+သဘောထားကြီးကြီးထားပါ
+ဖိအားပေးမှုကို ခံနေစရာမလိုပါ</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၄။ သူငယ်ချင်းတွေမိတ်ဆက်ပေးတာကမယုံသင့်ဘူး
+မိတ်ဆွေတွေမိတ်ဆက်ပေးတဲ့သူ့သဘောထားကပိုပြီးနက်တယ်
+မိတ်ဆွေဖြစ်တာကြောင့် သတိလျှော့မိတတ်ပါတယ်</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၅။ အခမဲ့ကမ်းလှမ်းချက်တွေရဲ့နောက်ကွယ်မှာလှည့်ကွက်တွေရှိတတ်တယ်
+ကျန်းမာရေးစစ်ဆေးမှု，ဟောပြောပွဲ，နောက်ဆုံးမှာပစ္စည်းတွေရောင်းချင်တယ်
+အခမဲ့ဆိုတာကို သတိထားပြီး ချဉ်းကပ်ပါ</div>
+    </div>
+    <div class="page">
+      <div class="page-body">၁၆။ ယာဉ်တိုက်မှုဖြစ်ရင် ရဲကိုအရင်ဆုံးခေါ်ပါ
+သူ့သဘောနဲ့သူဖြေရှင်းဖို့မစီစဉ်ပါနဲ့
+နောက်ပိုင်းမှာအာမခံကလျော်ချမ်းမှုမပေးနိုင်ဘူး
+တရားဝင်မှတ်တမ်းရှိမှသာ အာမခံကပေးမယ်</div>
+    </div>
+    <!-- Audio Controls -->
+    <div class="audio-controls">
+      <button id="playBtn">🔊 ဖတ်ပါ</button>
+      <button id="stopBtn">⏹️ ရပ်ပါ</button>
+    </div>
+    
     <!-- Controls -->
     <div class="controls">
-      <button id="prev">⟵ Previous</button>
-      <button id="next">Next ⟶</button>
+      <button id="prev">⟵ ရှေ့စာမျက်နှာ</button>
+      <button id="next">နောက်စာမျက်နှာ ⟶</button>
     </div>
   </div>
 
@@ -210,8 +352,64 @@
     const pages = document.querySelectorAll(".page");
     const prev = document.getElementById("prev");
     const next = document.getElementById("next");
+    const playBtn = document.getElementById("playBtn");
+    const stopBtn = document.getElementById("stopBtn");
 
     let currentPage = 0;
+    let isReading = false;
+    let readTimeout;
+
+    // 使用Web Speech API进行朗读
+    const synth = window.speechSynthesis;
+    let utterance = null;
+
+    // 设置缅语语音
+    function speakText(text) {
+      if (synth.speaking) {
+        synth.cancel();
+      }
+      
+      utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'my'; // 缅语
+      utterance.rate = 0.9; // 稍慢的语速
+      utterance.pitch = 1; // 正常音调
+      utterance.volume = 1; // 最大音量
+      
+      // 使用男性声音（如果可用）
+      const voices = synth.getVoices();
+      const burmeseVoice = voices.find(voice => voice.lang === 'my' && voice.name.includes('Male'));
+      if (burmeseVoice) {
+        utterance.voice = burmeseVoice;
+      }
+      
+      synth.speak(utterance);
+      
+      utterance.onend = function() {
+        if (isReading && currentPage < pages.length - 1) {
+          // 读完一页后等待3秒再读下一页
+          readTimeout = setTimeout(() => {
+            currentPage++;
+            showPage(currentPage);
+            readCurrentPage();
+          }, 3000);
+        }
+      };
+    }
+
+    // 朗读当前页
+    function readCurrentPage() {
+      if (currentPage === 0) return; // 跳过封面页
+      
+      const pageText = pages[currentPage].querySelector('.page-body').textContent;
+      speakText(pageText);
+    }
+
+    // 停止朗读
+    function stopReading() {
+      isReading = false;
+      synth.cancel();
+      clearTimeout(readTimeout);
+    }
 
     book.addEventListener("click", () => {
       book.style.display = "none";
@@ -225,6 +423,7 @@
     }
 
     prev.addEventListener("click", () => {
+      stopReading();
       if (currentPage > 0) {
         currentPage--;
         showPage(currentPage);
@@ -232,18 +431,46 @@
     });
 
     next.addEventListener("click", () => {
+      stopReading();
       if (currentPage < pages.length - 1) {
         currentPage++;
         showPage(currentPage);
       }
     });
 
+    playBtn.addEventListener("click", () => {
+      if (isReading) {
+        stopReading();
+        playBtn.textContent = "🔊 ဖတ်ပါ";
+      } else {
+        isReading = true;
+        playBtn.textContent = "⏸️ ခေတ္တရပ်ပါ";
+        readCurrentPage();
+      }
+    });
+
+    stopBtn.addEventListener("click", () => {
+      stopReading();
+      playBtn.textContent = "🔊 ဖတ်ပါ";
+    });
+
     document.addEventListener("keydown", (e) => {
       if (reader.style.display === "block") {
         if (e.key === "ArrowLeft") prev.click();
         if (e.key === "ArrowRight") next.click();
+        if (e.key === " ") {
+          playBtn.click();
+          e.preventDefault();
+        }
       }
     });
+
+    // 初始化语音合成器
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = function() {
+        // 语音列表加载完成
+      };
+    }
   </script>
 
 </body>
